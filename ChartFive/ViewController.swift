@@ -21,14 +21,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let bandCellId = "bandCellId" // cellForRowAt indexPath 함수에 사용되는 아이덴티파이어
 
     // 'Top Bands' 섹션의 테이블뷰 셀에 들어갈 내용들 -> Info.swift에서 구조체로 형식이 정해짐(이미지, 타이틀)
-    let bandsArray = [Info(image: "metalica", title: "Metallica"),
+    var bandsArray = [Info(image: "metalica", title: "Metallica"),
                       Info(image: "slipknot", title: "Slipknot"),
                       Info(image: "nirvana", title: "Nirvana"),
                       Info(image: "acdc", title: "AC/DC"),
                       Info(image: "system", title: "System Of A Down")]
     
     // 'Top Songs' 섹션의 테이블뷰 셀에 들어갈 내용들 -> Info.swift에서 구조체로 형식이 정해짐(이미지, 타이틀)
-    let songsArray = [Info(image: "1", title: "The Unforgiven"),
+    var songsArray = [Info(image: "1", title: "The Unforgiven"),
                       Info(image: "2", title: "Snuff"),
                       Info(image: "3", title: "Smells Like Teen Spirit"),
                       Info(image: "4", title: "Back In Black"),
@@ -127,6 +127,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+  
+//    // 삭제할 때 쓰는 건데 자료 형태가 var라서 작동이 안 되네 -> var로 했는데 또 터지네
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCell.EditingStyle.delete {
+//            bandsArray.remove(at: indexPath.row)
+//            songsArray.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+//        }
+//    }
+    
     
 
 
